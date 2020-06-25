@@ -1,0 +1,14 @@
+---
+services:
+  app:
+    image: sks002/first
+    ports:
+      - "3001:3001"
+    restart: always
+    depends_on: 
+      - proxy
+  proxy:
+    image: sks002/second
+    ports:
+      - "3010:3010"
+version: "3"
